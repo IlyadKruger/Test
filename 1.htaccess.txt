@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Protected Site"
-AuthUserFile https://test.ilyad.site/.htpasswd
-require valid-user
