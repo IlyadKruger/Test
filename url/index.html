@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-var jsonld = JSON.parse(document.querySelector('script[type="application/ld+json"]').innerText);
-document.getElementById('result').innerText = jsonld.endDate;
-</script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -14,6 +10,10 @@ document.getElementById('result').innerText = jsonld.endDate;
         "endDate": "2013-09-14T21:30"
       }
     </script>
+        <script>
+var jsonld = JSON.parse(document.querySelector('script[type="application/ld+json"]').innerText);
+document.getElementById('result').innerText = jsonld.endDate;
+</script>
   </head>
   <body>
     <p>The end date is: <strong id="result"></strong></p>
