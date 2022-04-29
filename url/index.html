@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset=utf-8 />
-<title>Url</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-</head>
-<body>
-<script>
-$.ajax({ url: 'https://test.ilyad.site/url/aparat/', dataType: 'html', success: function(response) { $('#testDiv').html(jQuery(response).find('#contentUrl').html()); } });
-document.write('#testDiv');
+  <head>
+    <script>
+var jsonld = JSON.parse(document.querySelector('script[type="application/ld+json"]').innerText);
+document.getElementById('result').innerText = jsonld.endDate;
 </script>
-  
-</body>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Event",
+        "name": "A random event",
+        "startDate": "2013-09-14T21:30",
+        "endDate": "2013-09-14T21:30"
+      }
+    </script>
+  </head>
+  <body>
+    <p>The end date is: <strong id="result"></strong></p>
+  </body>
 </html>
